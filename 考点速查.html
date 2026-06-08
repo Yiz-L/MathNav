@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考点速查 — MathNav</title>
+<link rel="stylesheet" href="assets/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    throwOnError: false
+  });"></script>
+</head>
+<body>
+
+<!-- ===== 侧边栏 ===== -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h1>📐 MathNav</h1>
+    <div class="subtitle">考点速查 · 薄弱点追踪</div>
+  </div>
+  <div class="sidebar-content">
+    <div class="weakness-section">
+      <h2>🔥 薄弱知识点</h2>
+      <button class="weakness-item" data-target="weak-ellipse-hyperbola">
+        <span class="tag">高</span> 椭圆与双曲线公式混淆
+      </button>
+      <div style="margin-top:8px; padding:6px 8px; font-size:12px; color:#666; border-top:1px solid #333;">
+        <span id="weak-count">1</span> 个薄弱点 · 点击直达详情
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-title">📦 模块导航</div>
+      <a href="#module-1">集合与逻辑</a>
+      <a href="#module-2">复数</a>
+      <a href="#module-3">平面向量</a>
+      <a href="#module-4">函数</a>
+      <a href="#module-5">导数</a>
+      <a href="#module-6">三角函数</a>
+      <a href="#module-7">数列</a>
+      <a href="#module-8" class="weak">解析几何</a>
+      <a href="#module-9">立体几何</a>
+      <a href="#module-10">概率统计</a>
+      <a href="#module-11">不等式</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:20px; border-top:1px solid #333; padding-top:16px;">
+      <div class="nav-title">📄 其他页面</div>
+      <a href="index.html">🏠 返回首页</a>
+      <a href="真题精讲/">📝 真题精讲</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 主内容 ===== -->
+<div class="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">首页</a> / 考点速查</div>
+    <h1>📖 高考数学考点速查</h1>
+    <div class="stats">共 11 大模块 · 点击 ⚠️ 标签查看薄弱点详情 · 点击 □ 标记已掌握</div>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 搜索知识点…（支持模糊匹配）" oninput="filterTopics()">
+  </div>
+
+  <!-- ===== 模块1: 集合 ===== -->
+  <div class="module" id="module-1">
+    <div class="module-header" onclick="toggleModule(this)">
+      一、📦 集合与常用逻辑用语
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+      <div class="topic" id="topic-set-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">集合的表示法（列举法、描述法）</span></div>
+      <div class="topic" id="topic-set-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">子集、交集、并集、补集运算</span></div>
+      <div class="topic" id="topic-set-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">充分条件与必要条件</span></div>
+      <div class="topic" id="topic-set-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">全称量词与存在量词、命题否定</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块2: 复数 ===== -->
+  <div class="module" id="module-2">
+    <div class="module-header" onclick="toggleModule(this)">
+      二、📦 复数
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+      <div class="topic" id="topic-complex-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$i^2 = -1$，复数四则运算</span></div>
+      <div class="topic" id="topic-complex-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">复数的几何意义（复平面）</span></div>
+      <div class="topic" id="topic-complex-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">共轭复数、模长 $|z| = \sqrt{a^2+b^2}$</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块3: 平面向量 ===== -->
+  <div class="module" id="module-3">
+    <div class="module-header" onclick="toggleModule(this)">
+      三、📦 平面向量
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+      <div class="topic" id="topic-vec-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">向量的加减法、数乘运算</span></div>
+      <div class="topic" id="topic-vec-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">数量积 $\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos\theta$</span></div>
+      <div class="topic" id="topic-vec-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">坐标运算 $\vec{a}=(x_1,y_1)$, $\vec{b}=(x_2,y_2)$</span></div>
+      <div class="topic" id="topic-vec-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">平行 $\vec{a}\parallel\vec{b} \iff x_1y_2 = x_2y_1$ · 垂直 $\vec{a}\perp\vec{b} \iff x_1x_2 + y_1y_2 = 0$</span></div>
+      <div class="topic" id="topic-vec-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">投影向量</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块4: 函数 ===== -->
+  <div class="module" id="module-4">
+    <div class="module-header" onclick="toggleModule(this)">
+      四、📦 函数 <span style="font-weight:400;font-size:13px;color:#666;">（灵魂模块）</span>
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">4.1 函数概念</div>
+      <div class="topic" id="topic-func-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">函数定义（一对一、多对一）</span></div>
+      <div class="topic" id="topic-func-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">定义域、值域</span></div>
+      <div class="topic" id="topic-func-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">解析式求法（换元法、待定系数法）</span></div>
+
+      <div class="sub-header">4.2 函数性质</div>
+      <div class="topic" id="topic-func-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">单调性（定义法证明步骤）</span></div>
+      <div class="topic" id="topic-func-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">奇偶性：$f(-x)=f(x)$ / $f(-x)=-f(x)$，定义域对称性</span></div>
+      <div class="topic" id="topic-func-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">周期性 $f(x+T)=f(x)$</span></div>
+      <div class="topic" id="topic-func-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">对称性</span></div>
+
+      <div class="sub-header">4.3 基本初等函数</div>
+      <div class="topic" id="topic-func-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">指数函数（$a>1$ 递增 · $0&lt;a&lt;1$ 递减）</span></div>
+      <div class="topic" id="topic-func-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">对数函数 $\log_a x$ 运算公式</span></div>
+      <div class="topic" id="topic-func-10"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">幂函数 $y=x^\alpha$</span></div>
+      <div class="topic" id="topic-func-11"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">指数对数互化 $a^b = N \iff \log_a N = b$</span></div>
+
+      <div class="sub-header">4.4 图像与变换</div>
+      <div class="topic" id="topic-func-12"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">平移、伸缩、对称、翻折变换</span></div>
+
+      <div class="sub-header">4.5 抽象函数与分段函数</div>
+      <div class="topic" id="topic-func-13"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">赋值法、分类讨论</span></div>
+
+      <div class="sub-header">4.6 值域问题</div>
+      <div class="topic" id="topic-func-14"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">配方法、换元法、判别式法</span></div>
+
+      <div class="sub-header">4.7 比大小</div>
+      <div class="topic" id="topic-func-15"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">指数幂对数比大小策略</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块5: 导数 ===== -->
+  <div class="module" id="module-5">
+    <div class="module-header" onclick="toggleModule(this)">
+      五、📦 导数
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">5.1 导数计算</div>
+      <div class="topic" id="topic-der-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">基本求导公式：$(x^n)' = nx^{n-1}$, $(\sin x)' = \cos x$, $(\cos x)' = -\sin x$, $(e^x)' = e^x$, $(\ln x)' = \frac{1}{x}$</span></div>
+      <div class="topic" id="topic-der-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">四则运算求导、链式法则</span></div>
+
+      <div class="sub-header">5.2 导数应用</div>
+      <div class="topic" id="topic-der-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">切线方程 $y - y_0 = f'(x_0)(x - x_0)$</span></div>
+      <div class="topic" id="topic-der-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">单调性：$f'(x) > 0 \Rightarrow$ 增；$f'(x) < 0 \Rightarrow$ 减</span></div>
+      <div class="topic" id="topic-der-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">极值与最值（$f'(x)=0$ 求驻点，$f''(x)$ 判凹凸）</span></div>
+      <div class="topic" id="topic-der-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">零点问题</span></div>
+
+      <div class="sub-header">5.3 进阶技巧</div>
+      <div class="topic" id="topic-der-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">切线放缩、同构函数、极值点偏移</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块6: 三角函数 ===== -->
+  <div class="module" id="module-6">
+    <div class="module-header" onclick="toggleModule(this)">
+      六、📦 三角函数
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">6.1 基本概念</div>
+      <div class="topic" id="topic-trig-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">弧度制 $\pi \,\text{rad} = 180^\circ$</span></div>
+      <div class="topic" id="topic-trig-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">三角函数线（正弦线、余弦线、正切线）</span></div>
+      <div class="topic" id="topic-trig-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">同角关系 $\sin^2\theta + \cos^2\theta = 1$，$\tan\theta = \frac{\sin\theta}{\cos\theta}$</span></div>
+
+      <div class="sub-header">6.2 恒等变换</div>
+      <div class="topic" id="topic-trig-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">和差角公式 $\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta$</span></div>
+      <div class="topic" id="topic-trig-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">倍角公式 $\sin2\theta=2\sin\theta\cos\theta$，$\cos2\theta=\cos^2\theta-\sin^2\theta$</span></div>
+      <div class="topic" id="topic-trig-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>辅助角公式</b> $a\sin x+b\cos x = \sqrt{a^2+b^2}\sin(x+\varphi)$</span></div>
+      <div class="topic" id="topic-trig-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">诱导公式（奇变偶不变，符号看象限）</span></div>
+
+      <div class="sub-header">6.3 图像与性质</div>
+      <div class="topic" id="topic-trig-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$y = A\sin(\omega x + \varphi)$ 的图像变换（平移/伸缩）</span></div>
+      <div class="topic" id="topic-trig-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">周期 $T = \frac{2\pi}{|\omega|}$，振幅 $A$，相位 $\varphi$</span></div>
+
+      <div class="sub-header">6.4 解三角形</div>
+      <div class="topic" id="topic-trig-10"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>正弦定理</b> $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$</span></div>
+      <div class="topic" id="topic-trig-11"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>余弦定理</b> $a^2 = b^2 + c^2 - 2bc\cos A$</span></div>
+      <div class="topic" id="topic-trig-12"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">面积公式 $S = \frac12 ab\sin C$</span></div>
+      <div class="topic" id="topic-trig-13"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">边角互化（边化角用正弦，角化边用余弦）</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块7: 数列 ===== -->
+  <div class="module" id="module-7">
+    <div class="module-header" onclick="toggleModule(this)">
+      七、📦 数列
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">7.1 基本概念</div>
+      <div class="topic" id="topic-seq-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">通项 $a_n$ 与前 $n$ 项和 $S_n$：$a_n = \begin{cases} S_1 & n=1 \\ S_n - S_{n-1} & n \ge 2 \end{cases}$</span></div>
+
+      <div class="sub-header">7.2 等差数列</div>
+      <div class="topic" id="topic-seq-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$a_n = a_1 + (n-1)d$，$S_n = \frac{n(a_1+a_n)}{2} = na_1 + \frac{n(n-1)}{2}d$</span></div>
+
+      <div class="sub-header">7.3 等比数列</div>
+      <div class="topic" id="topic-seq-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$a_n = a_1 q^{n-1}$，$S_n = \begin{cases} na_1 & q=1 \\ \frac{a_1(1-q^n)}{1-q} & q \ne 1 \end{cases}$</span></div>
+
+      <div class="sub-header">7.4 数列求和</div>
+      <div class="topic" id="topic-seq-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">裂项相消 $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$</span></div>
+      <div class="topic" id="topic-seq-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>错位相减</b>（等差 $\times$ 等比型求和）</span></div>
+      <div class="topic" id="topic-seq-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">分组求和</span></div>
+
+      <div class="sub-header">7.5 递推关系</div>
+      <div class="topic" id="topic-seq-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$a_{n+1} = pa_n + q$ 型（构造法）、取倒数、累加累乘</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块8: 解析几何 ⚠️ ===== -->
+  <div class="module" id="module-8">
+    <div class="module-header" onclick="toggleModule(this)" style="border-left:4px solid #ff4757;">
+      八、📦 解析几何 <span class="badge">⚠️ 1 个薄弱点</span>
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">8.1 直线与圆</div>
+      <div class="topic" id="topic-analytic-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">斜率 $k$、两点距离公式</span></div>
+      <div class="topic" id="topic-analytic-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">直线与圆的位置关系：$d > r$ 相离 · $d = r$ 相切 · $d < r$ 相交</span></div>
+      <div class="topic" id="topic-analytic-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">点到直线距离公式 $d = \frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$</span></div>
+
+      <div class="sub-header">8.2 椭圆</div>
+      <div class="topic" id="topic-analytic-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">定义：到两焦点距离之和为 $2a$（$2a > |F_1F_2|$）</span></div>
+      <div class="topic" id="topic-analytic-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">标准方程 $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$（$a>b>0$）</span></div>
+      <div class="topic" id="topic-analytic-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">焦点 $(\pm c, 0)$，顶点 $(\pm a, 0)$, $(0, \pm b)$</span></div>
+      <div class="topic" id="topic-analytic-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>离心率</b> $e = \dfrac{c}{a}$（$0 < e < 1$），$c^2 = a^2 - b^2$ 🟢</span></div>
+
+      <div class="sub-header">8.3 双曲线 <span style="font-weight:400;font-size:12px;color:#ff4757;">⚠️</span></div>
+      <div class="topic" id="topic-hyperbola">
+        <span class="checkbox" onclick="toggleCheck(this)"></span>
+        <span class="text">双曲线基本性质</span>
+        <button class="weak-badge" onclick="showWeakness('weak-ellipse-hyperbola', this)">⚠️ 不熟悉</button>
+      </div>
+
+      <!-- 椭圆 vs 双曲线 薄弱详情 -->
+      <div class="weakness-detail" id="weak-ellipse-hyperbola">
+        <button class="close-btn" onclick="closeWeakness('weak-ellipse-hyperbola')">✕</button>
+
+        <h3>🔴 椭圆 vs 双曲线 — 核心混淆点</h3>
+        <p style="margin-bottom:8px;">来源：<b>2025新高考I卷 第3题</b>（双曲线离心率）</p>
+
+        <div class="info-box">
+          <b>📌 一句话记：</b>椭圆是"减号"（$c^2 = a^2 - b^2$），双曲线是"加号"（$c^2 = a^2 + b^2$）
+          双曲线的 $c$ 更大，所以离心率 $e>1$。
+        </div>
+
+        <table>
+          <tr><th>对比项</th><th style="color:#2d7d46;">🟢 椭圆</th><th style="color:#c0392b;">🔴 双曲线</th></tr>
+          <tr>
+            <td>定义</td>
+            <td>到两焦点距离 <b>之和</b> $= 2a$</td>
+            <td>到两焦点距离之差的 <b>绝对值</b> $= 2a$</td>
+          </tr>
+          <tr>
+            <td>标准方程</td>
+            <td>$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$</td>
+            <td>$\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$</td>
+          </tr>
+          <tr>
+            <td><b>$a,b,c$ 关系</b></td>
+            <td class="formula-em" style="background:#e8f8e8;">$c^2 = a^2 - b^2$ 🟢</td>
+            <td class="formula-em" style="background:#ffe0e0;">$c^2 = a^2 + b^2$ 🔴</td>
+          </tr>
+          <tr>
+            <td>离心率</td>
+            <td>$0 < e < 1$</td>
+            <td>$e > 1$</td>
+          </tr>
+          <tr>
+            <td>谁最大</td>
+            <td>$a$ 最大（$a > c$）</td>
+            <td>$c$ 最大（$c > a$）</td>
+          </tr>
+          <tr>
+            <td>特有性质</td>
+            <td>—</td>
+            <td>渐近线 $y = \pm \dfrac{b}{a}x$</td>
+          </tr>
+        </table>
+
+        <p><b>💡 记忆技巧：</b></p>
+        <ul>
+          <li><b>椭圆</b> = Ellipse → "e" 像圆形 → 里面"<b>减</b>"一点变扁 → $c^2 = a^2 \color{red}{-} b^2$</li>
+          <li><b>双曲线</b> = Hyperbola → "Hyper"（超过）→ 离心率超过 1，$c^2$ 是 <b>加</b> 起来超过 $a^2$ → $c^2 = a^2 \color{red}{+} b^2$</li>
+          <li>另一种：椭圆要"<b>节省</b>"→ 减号；双曲线要"<b>扩张</b>"→ 加号</li>
+        </ul>
+        <div class="tip">关联题目：<a href="真题精讲/2025新高考I卷.html" target="_blank">2025新高考I卷 第3题</a></div>
+      </div>
+
+      <div class="topic" id="topic-analytic-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">渐近线 $y = \pm \dfrac{b}{a}x$</span></div>
+
+      <div class="sub-header">8.4 抛物线</div>
+      <div class="topic" id="topic-analytic-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">定义：到焦点距离 $=$ 到准线距离</span></div>
+      <div class="topic" id="topic-analytic-10"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">四种标准形式：$y^2 = \pm 2px$, $x^2 = \pm 2py$</span></div>
+
+      <div class="sub-header">8.5 二级结论</div>
+      <div class="topic" id="topic-analytic-11"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">焦点三角形、通径 $2p$、焦点弦性质</span></div>
+
+      <div class="sub-header">8.6 大题模板</div>
+      <div class="topic" id="topic-analytic-12"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>联立 → 韦达定理 → 弦长公式</b></span></div>
+      <div class="topic" id="topic-analytic-13"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">中点弦、点差法</span></div>
+      <div class="topic" id="topic-analytic-14"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">定点定值问题</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块9: 立体几何 ===== -->
+  <div class="module" id="module-9">
+    <div class="module-header" onclick="toggleModule(this)">
+      九、📦 立体几何
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">9.1 空间几何体</div>
+      <div class="topic" id="topic-solid-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">柱、锥、台、球的表面积与体积公式</span></div>
+      <div class="topic" id="topic-solid-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">三视图还原</span></div>
+
+      <div class="sub-header">9.2 空间位置关系</div>
+      <div class="topic" id="topic-solid-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">线面平行/垂直的判定定理</span></div>
+      <div class="topic" id="topic-solid-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">面面平行/垂直的判定定理</span></div>
+
+      <div class="sub-header">9.3 建系法 ⭐</div>
+      <div class="topic" id="topic-solid-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>建系三部曲：①建系 ②求坐标 ③代公式</b></span></div>
+      <div class="topic" id="topic-solid-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">异面直线角、线面角 $\sin\theta = |\cos\langle\vec{v},\vec{n}\rangle|$</span></div>
+      <div class="topic" id="topic-solid-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>二面角</b> $\cos\theta = |\cos\langle\vec{n}_1,\vec{n}_2\rangle|$（注意锐钝角判断）</span></div>
+      <div class="topic" id="topic-solid-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">点到面距离（法向量法）</span></div>
+
+      <div class="sub-header">9.4 外接球</div>
+      <div class="topic" id="topic-solid-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">补形法（将几何体补成长方体/正方体）</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块10: 概率统计 ===== -->
+  <div class="module" id="module-10">
+    <div class="module-header" onclick="toggleModule(this)">
+      十、📦 概率统计
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+
+      <div class="sub-header">10.1 排列组合</div>
+      <div class="topic" id="topic-prob-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">分类（加法）vs 分步（乘法）</span></div>
+      <div class="topic" id="topic-prob-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">排列 $A_n^m$ vs 组合 $C_n^m$（有序→排列，无序→组合）</span></div>
+      <div class="topic" id="topic-prob-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">捆绑法（相邻）· 插空法（不相邻）· 隔板法</span></div>
+
+      <div class="sub-header">10.2 二项式定理</div>
+      <div class="topic" id="topic-prob-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">通项 $T_{k+1} = C_n^k a^{n-k}b^k$</span></div>
+
+      <div class="sub-header">10.3 概率模型</div>
+      <div class="topic" id="topic-prob-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">古典概型 $P(A) = \frac{|A|}{|\Omega|}$</span></div>
+      <div class="topic" id="topic-prob-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">条件概率 $P(B|A) = \frac{P(AB)}{P(A)}$</span></div>
+      <div class="topic" id="topic-prob-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">事件独立性 $P(AB) = P(A)P(B)$</span></div>
+      <div class="topic" id="topic-prob-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>条件概率 vs 独立事件</b>（学生最大难点）</span></div>
+
+      <div class="sub-header">10.4 随机变量</div>
+      <div class="topic" id="topic-prob-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">期望 $E(X)$、方差 $D(X)$</span></div>
+      <div class="topic" id="topic-prob-10"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">二项分布 $X \sim B(n,p)$ vs 超几何分布</span></div>
+
+      <div class="sub-header">10.5 统计</div>
+      <div class="topic" id="topic-prob-11"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">频率分布直方图</span></div>
+      <div class="topic" id="topic-prob-12"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">独立性检验 $\chi^2 = \frac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块11: 不等式 ===== -->
+  <div class="module" id="module-11">
+    <div class="module-header" onclick="toggleModule(this)">
+      十一、📦 不等式
+      <span class="arrow open">▾</span>
+    </div>
+    <div class="module-body">
+      <div class="topic" id="topic-ineq-1"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">基本不等式 $\frac{a+b}{2} \ge \sqrt{ab}$（$a,b>0$），取等 $a=b$</span></div>
+      <div class="topic" id="topic-ineq-2"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">柯西不等式 $(a^2+b^2)(c^2+d^2) \ge (ac+bd)^2$</span></div>
+      <div class="topic" id="topic-ineq-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">一元二次不等式（二次函数图像法）</span></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script src="assets/main.js"></script>
+</body>
+</html>

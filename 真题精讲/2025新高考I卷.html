@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025新高考I卷 逐题精讲 — MathNav</title>
+<link rel="stylesheet" href="../assets/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    throwOnError: false
+  });"></script>
+<style>
+  .q-card { background:#fff; border-radius:12px; margin-bottom:20px; border:1px solid #eef1f5; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+  .q-card .q-header { padding:16px 20px; background:#f8f9fb; border-bottom:1px solid #eef1f5; display:flex; align-items:center; gap:12px; }
+  .q-card .q-header .q-num { display:inline-flex; width:32px; height:32px; border-radius:50%; background:#3742fa; color:#fff; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .q-card .q-header .q-type { font-size:12px; color:#999; }
+  .q-card .q-header .q-title { font-weight:700; font-size:16px; }
+  .q-card .q-body { padding:16px 20px; }
+  .q-card .q-text { font-size:15px; line-height:1.8; margin-bottom:12px; }
+  .q-card .q-text .options { display:flex; gap:16px; flex-wrap:wrap; margin-top:8px; }
+  .q-card .q-text .options span { display:inline-block; }
+  .q-card .section-title { font-weight:700; font-size:14px; padding:8px 0 4px; border-bottom:1px dashed #eef1f5; margin:12px 0 8px; }
+  .q-card .section-title.knowledge { color:#3742fa; }
+  .q-card .section-title.solution { color:#2ed573; }
+  .q-card .section-title.mistakes { color:#ff4757; }
+  .q-card .tag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:4px; margin:2px; }
+  .q-card .tag.blue { background:#eef1ff; color:#3742fa; }
+  .q-card .tag.green { background:#e8f8e8; color:#2d7d46; }
+  .q-card .tag.red { background:#fff0f0; color:#c0392b; }
+  .q-card .tag.gray { background:#f5f5f5; color:#666; }
+  .q-card .mistake-item { padding:6px 12px; background:#fff8f8; border-left:3px solid #ff4757; margin:4px 0; border-radius:0 4px 4px 0; font-size:14px; }
+  .q-card .answer-box { background:#f0fff4; border:1px solid #b2f2bb; border-radius:8px; padding:10px 16px; margin:8px 0; font-size:15px; font-weight:700; color:#2d7d46; }
+  .q-card .step { padding:4px 0 4px 16px; border-left:2px solid #ddd; margin:4px 0; font-size:14px; }
+  .q-card table { width:100%; border-collapse:collapse; margin:8px 0; font-size:14px; }
+  .q-card th, .q-card td { padding:6px 10px; border:1px solid #eef1f5; text-align:left; }
+  .q-card th { background:#f8f9fb; font-weight:600; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h1>📐 MathNav</h1>
+    <div class="subtitle">2025新高考I卷 · 逐题精讲</div>
+  </div>
+  <div class="sidebar-content">
+    <div class="weakness-section">
+      <h2>🔥 本卷薄弱点</h2>
+      <button class="weakness-item" onclick="location.href='../考点速查.html#weak-ellipse-hyperbola'">
+        <span class="tag">高</span> 椭圆与双曲线公式混淆（第3题）
+      </button>
+    </div>
+    <div class="nav-section">
+      <div class="nav-title">📄 页面</div>
+      <a href="../index.html">🏠 首页</a>
+      <a href="../考点速查.html">📖 考点速查</a>
+      <a href="index.html">📝 真题列表</a>
+    </div>
+    <div class="nav-section" style="margin-top:20px; border-top:1px solid #333; padding-top:16px;">
+      <div class="nav-title">📋 题目跳转</div>
+      <a href="#q1">第1题 · 复数</a>
+      <a href="#q2">第2题 · 集合</a>
+      <a href="#q3">第3题 · 双曲线</a>
+      <a href="#q4" style="color:#555;">第4题 · 正切函数 ⬜</a>
+      <a href="#q5" style="color:#555;">第5题 · 函数周期 ⬜</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="../index.html">首页</a> / <a href="index.html">真题精讲</a> / 2025新高考I卷</div>
+    <h1>📝 2025新高考I卷 — 逐题精讲</h1>
+    <div class="stats">进度：3/19 题 · 开始时间：2026/06/08</div>
+  </div>
+
+  <!-- ===== 进度总览 ===== -->
+  <div style="background:#fff; border-radius:12px; padding:16px 20px; margin-bottom:24px; border:1px solid #eef1f5; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h3 style="margin-bottom:8px;">📊 进度总览</h3>
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#f8f9fb;">
+        <th style="padding:6px 10px; text-align:left; border:1px solid #eef1f5;">题号</th>
+        <th style="padding:6px 10px; text-align:left; border:1px solid #eef1f5;">题型</th>
+        <th style="padding:6px 10px; text-align:left; border:1px solid #eef1f5;">考点</th>
+        <th style="padding:6px 10px; text-align:left; border:1px solid #eef1f5;">状态</th>
+      </tr>
+      <tr><td style="padding:6px 10px; border:1px solid #eef1f5;">1</td><td style="padding:6px 10px; border:1px solid #eef1f5;">单选</td><td style="padding:6px 10px; border:1px solid #eef1f5;">复数运算</td><td style="padding:6px 10px; border:1px solid #eef1f5; color:#2ed573;">✅</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #eef1f5;">2</td><td style="padding:6px 10px; border:1px solid #eef1f5;">单选</td><td style="padding:6px 10px; border:1px solid #eef1f5;">集合补集</td><td style="padding:6px 10px; border:1px solid #eef1f5; color:#2ed573;">✅</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #eef1f5;">3</td><td style="padding:6px 10px; border:1px solid #eef1f5;">单选</td><td style="padding:6px 10px; border:1px solid #eef1f5;">双曲线离心率</td><td style="padding:6px 10px; border:1px solid #eef1f5; color:#2ed573;">✅</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #eef1f5;">4-19</td><td style="padding:6px 10px; border:1px solid #eef1f5;">—</td><td style="padding:6px 10px; border:1px solid #eef1f5; color:#999;">待做</td><td style="padding:6px 10px; border:1px solid #eef1f5; color:#999;">⬜</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== 第1题 ===== -->
+  <div class="q-card" id="q1">
+    <div class="q-header">
+      <span class="q-num">1</span>
+      <span class="q-type">单选题</span>
+      <span class="q-title">复数运算</span>
+      <span style="margin-left:auto; font-size:12px; color:#999;">考点速查 → <a href="../考点速查.html#module-2" style="color:#3742fa;">复数</a></span>
+    </div>
+    <div class="q-body">
+
+      <div class="q-text">
+        <b>题目：</b>$(1+5i)i$ 的虚部为（ ）<br>
+        <div class="options">
+          <span>A. $-1$</span>
+          <span>B. $0$</span>
+          <span>C. $1$</span>
+          <span>D. $6$</span>
+        </div>
+      </div>
+
+      <div class="section-title knowledge">📌 知识点</div>
+      <div>
+        <span class="tag blue">复数乘法</span>
+        <span class="tag blue">$i^2 = -1$</span>
+        <span class="tag blue">虚部定义</span>
+      </div>
+      <table>
+        <tr><th>考点</th><th>内容</th></tr>
+        <tr><td>复数乘法</td><td>$(a+bi)(c+di) = ac + adi + bci + bdi^2$，按多项式乘法展开</td></tr>
+        <tr><td>虚数单位</td><td>$i^2 = -1$</td></tr>
+        <tr><td>虚部定义</td><td>$a+bi$ 的虚部是 $b$（不含 $i$），实部是 $a$</td></tr>
+      </table>
+
+      <div class="section-title solution">✍️ 解题过程</div>
+      <div class="step">展开：$(1+5i)i = 1\cdot i + 5i \cdot i = i + 5i^2$</div>
+      <div class="step">代入 $i^2 = -1$：$i + 5(-1) = i - 5 = -5 + i$</div>
+      <div class="step">标准形式 $-5 + 1\cdot i$，虚部为 $1$</div>
+      <div class="answer-box">答案：C. $1$</div>
+
+      <div class="section-title mistakes">⚠️ 教学易错点</div>
+      <div class="mistake-item"><b>虚部定义混淆：</b>学生答 $-5+i$（整个复数）或说虚部是 $i$。正确：虚部是 $i$ 前面的系数，即 $1$</div>
+      <div class="mistake-item"><b>$i^2$ 记错：</b>$i^2 = -1$（不是 $1$ 也不是 $i$）</div>
+      <div class="mistake-item"><b>格式混乱：</b>算完 $i-5$ 后要写成 $a+bi$ 形式再判断</div>
+    </div>
+  </div>
+
+  <!-- ===== 第2题 ===== -->
+  <div class="q-card" id="q2">
+    <div class="q-header">
+      <span class="q-num">2</span>
+      <span class="q-type">单选题</span>
+      <span class="q-title">集合运算</span>
+      <span style="margin-left:auto; font-size:12px; color:#999;">考点速查 → <a href="../考点速查.html#module-1" style="color:#3742fa;">集合</a></span>
+    </div>
+    <div class="q-body">
+
+      <div class="q-text">
+        <b>题目：</b>已知集合 $U = \{x \mid x \text{ 是小于 9 的正整数}\}$，$A = \{1, 3, 5\}$，则 $\complement_{U} A$ 中元素的个数为（ ）<br>
+        <div class="options">
+          <span>A. $0$</span>
+          <span>B. $3$</span>
+          <span>C. $5$</span>
+          <span>D. $8$</span>
+        </div>
+      </div>
+
+      <div class="section-title knowledge">📌 知识点</div>
+      <div>
+        <span class="tag blue">集合表示法</span>
+        <span class="tag blue">补集运算</span>
+        <span class="tag blue">正整数集</span>
+      </div>
+
+      <div class="section-title solution">✍️ 解题过程</div>
+      <div class="step">$U = \{1, 2, 3, 4, 5, 6, 7, 8\}$（小于9的正整数，共8个）</div>
+      <div class="step">$A = \{1, 3, 5\}$</div>
+      <div class="step">$\complement_{U} A = U \setminus A = \{2, 4, 6, 7, 8\}$</div>
+      <div class="step">元素个数为 $5$</div>
+      <div class="answer-box">答案：C. $5$</div>
+
+      <div class="section-title mistakes">⚠️ 教学易错点</div>
+      <div class="mistake-item"><b>"小于9"不含9：</b>正整数 $U = 1\text{-}8$，不是 $1\text{-}9$</div>
+      <div class="mistake-item"><b>问的是"个数"不是集合本身：</b>要答数字 $5$，不是 $\{2,4,6,7,8\}$</div>
+    </div>
+  </div>
+
+  <!-- ===== 第3题 ===== -->
+  <div class="q-card" id="q3">
+    <div class="q-header">
+      <span class="q-num">3</span>
+      <span class="q-type">单选题</span>
+      <span class="q-title">双曲线离心率</span>
+      <span style="margin-left:auto; font-size:12px; color:#999;">考点速查 → <a href="../考点速查.html#topic-hyperbola" style="color:#ff4757;">⚠️ 薄弱点</a></span>
+    </div>
+    <div class="q-body">
+
+      <div class="q-text">
+        <b>题目：</b>已知双曲线 $C$ 的虚轴长是实轴长的 $\sqrt{7}$ 倍，则 $C$ 的离心率为（ ）<br>
+        <div class="options">
+          <span>A. $\sqrt{2}$</span>
+          <span>B. $2$</span>
+          <span>C. $\sqrt{7}$</span>
+          <span>D. $2\sqrt{2}$</span>
+        </div>
+      </div>
+
+      <div class="section-title knowledge">📌 知识点</div>
+      <div>
+        <span class="tag red">双曲线</span>
+        <span class="tag blue">离心率 $e = c/a$</span>
+        <span class="tag blue">$c^2 = a^2 + b^2$</span>
+        <span class="tag gray">实轴 $2a$ · 虚轴 $2b$</span>
+      </div>
+
+      <div class="section-title solution">✍️ 解题过程</div>
+      <div class="step">虚轴长 $2b$ 是实轴长 $2a$ 的 $\sqrt{7}$ 倍：$2b = \sqrt{7}\cdot 2a \Rightarrow b = \sqrt{7}a$</div>
+      <div class="step">双曲线 $c^2 = a^2 + b^2$：$c^2 = a^2 + (\sqrt{7}a)^2 = a^2 + 7a^2 = 8a^2$</div>
+      <div class="step">$c = \sqrt{8}a = 2\sqrt{2}a$</div>
+      <div class="step">$e = \dfrac{c}{a} = \dfrac{2\sqrt{2}a}{a} = 2\sqrt{2}$</div>
+      <div class="answer-box">答案：D. $2\sqrt{2}$</div>
+
+      <div class="section-title mistakes">⚠️ 教学易错点</div>
+      <div class="mistake-item">
+        <b style="color:#c0392b;">🔴 椭圆与双曲线公式混淆（最高频错误）：</b>
+        椭圆 $c^2 = a^2 - b^2$，双曲线 $c^2 = a^2 + b^2$。一字之差，天壤之别。
+        详情 → <a href="../考点速查.html#weak-ellipse-hyperbola" style="color:#3742fa;">考点速查·薄弱点详情</a>
+      </div>
+      <div class="mistake-item"><b>实轴/虚轴是 $2a$/$2b$：</b>问"长"要记得乘 2，$a$ 和 $b$ 是半轴长</div>
+      <div class="mistake-item"><b>离心率范围检验：</b>双曲线 $e>1$，算出 $e<1$ 立刻知道算错了</div>
+    </div>
+  </div>
+
+  <!-- ===== 待做题提示 ===== -->
+  <div style="background:#f8f9fb; border-radius:12px; padding:24px; text-align:center; border:2px dashed #ddd; margin-top:24px;">
+    <div style="font-size:24px; margin-bottom:8px;">📌</div>
+    <div style="font-size:16px; font-weight:600; color:#666;">继续做第4题？</div>
+    <div style="font-size:14px; color:#999; margin-top:4px;">告诉我"继续做题"，我来更新这道题的精讲内容</div>
+  </div>
+
+</div>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
