@@ -30,8 +30,17 @@
       <button class="weakness-item" data-target="weak-ellipse-hyperbola">
         <span class="tag">高</span> 椭圆与双曲线公式混淆
       </button>
+      <button class="weakness-item" data-target="weak-periodicity">
+        <span class="tag">高</span> 周期性 + 奇偶性联合运用
+      </button>
+      <button class="weakness-item" data-target="weak-vector-add">
+        <span class="tag">中</span> 向量加减法与实际应用
+      </button>
+      <button class="weakness-item" data-target="weak-trig-symmetry">
+        <span class="tag">中</span> 三角函数对称性混淆
+      </button>
       <div style="margin-top:8px; padding:6px 8px; font-size:12px; color:#666; border-top:1px solid #333;">
-        <span id="weak-count">1</span> 个薄弱点 · 点击直达详情
+        <span id="weak-count">4</span> 个薄弱点 · 点击直达详情
       </div>
     </div>
 
@@ -39,10 +48,10 @@
       <div class="nav-title">📦 模块导航</div>
       <a href="#module-1">集合与逻辑</a>
       <a href="#module-2">复数</a>
-      <a href="#module-3">平面向量</a>
-      <a href="#module-4">函数</a>
+      <a href="#module-3" class="weak">平面向量</a>
+      <a href="#module-4" class="weak">函数</a>
       <a href="#module-5">导数</a>
-      <a href="#module-6">三角函数</a>
+      <a href="#module-6" class="weak">三角函数</a>
       <a href="#module-7">数列</a>
       <a href="#module-8" class="weak">解析几何</a>
       <a href="#module-9">立体几何</a>
@@ -63,7 +72,7 @@
   <div class="page-header">
     <div class="breadcrumb"><a href="index.html">首页</a> / 考点速查</div>
     <h1>📖 高考数学考点速查</h1>
-    <div class="stats">共 11 大模块 · 点击 ⚠️ 标签查看薄弱点详情 · 点击 □ 标记已掌握</div>
+    <div class="stats">共 11 大模块 · <span style="color:#ff4757;">4</span> 个薄弱点 · 点击 ⚠️ 标签查看详情 · 点击 □ 标记已掌握</div>
   </div>
 
   <div class="search-box">
@@ -99,8 +108,8 @@
 
   <!-- ===== 模块3: 平面向量 ===== -->
   <div class="module" id="module-3">
-    <div class="module-header" onclick="toggleModule(this)">
-      三、📦 平面向量
+    <div class="module-header" onclick="toggleModule(this)" style="border-left:4px solid #ffa502;">
+      三、📦 平面向量 <span class="badge">⚠️ 1 个薄弱点</span>
       <span class="arrow open">▾</span>
     </div>
     <div class="module-body">
@@ -109,13 +118,110 @@
       <div class="topic" id="topic-vec-3"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">坐标运算 $\vec{a}=(x_1,y_1)$, $\vec{b}=(x_2,y_2)$</span></div>
       <div class="topic" id="topic-vec-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">平行 $\vec{a}\parallel\vec{b} \iff x_1y_2 = x_2y_1$ · 垂直 $\vec{a}\perp\vec{b} \iff x_1x_2 + y_1y_2 = 0$</span></div>
       <div class="topic" id="topic-vec-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">投影向量</span></div>
+      <div class="topic" id="topic-vec-weak">
+        <span class="checkbox" onclick="toggleCheck(this)"></span>
+        <span class="text"><b>向量加减法 · 三角形/平行四边形法则</b></span>
+        <button class="weak-badge" onclick="showWeakness('weak-vector-add', this)">⚠️ 需要强化</button>
+      </div>
+
+      <!-- 薄弱点详情：向量加减法 -->
+      <div class="weakness-detail" id="weak-vector-add">
+        <button class="close-btn" onclick="closeWeakness('weak-vector-add')">✕</button>
+
+        <h3>🔴 向量加减法 — 三角形法则与实际应用</h3>
+        <p style="margin-bottom:8px;">来源：<b>2025新高考I卷 第6题</b>（帆船视风风速合成）</p>
+
+        <div class="info-box">
+          <b>📌 核心口诀：</b>首尾相连 → 和封闭；减变加 → 反向再首尾。<br>
+          当两向量在图中<b>首尾相接</b>时，直接从第一个的起点指向最后一个的终点就是和向量。
+        </div>
+
+        <!-- 三图并排 -->
+        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:10px 0;">
+          <div style="text-align:center; background:#f8f9fb; border-radius:8px; padding:8px;">
+            <svg width="160" height="110" viewBox="0 0 160 110">
+              <line x1="20" y1="95" x2="60" y2="30" stroke="#2ed573" stroke-width="3"/>
+              <text x="22" y="68" font-size="12" fill="#2ed573" font-weight="600">$\vec{a}$</text>
+              <line x1="60" y1="30" x2="140" y2="75" stroke="#3742fa" stroke-width="3"/>
+              <text x="95" y="45" font-size="12" fill="#3742fa" font-weight="600">$\vec{b}$</text>
+              <line x1="20" y1="95" x2="140" y2="75" stroke="#ff4757" stroke-width="3" stroke-dasharray="6,3"/>
+              <text x="70" y="105" font-size="12" fill="#ff4757" font-weight="600">$\vec{a}+\vec{b}$</text>
+              <text x="80" y="15" text-anchor="middle" font-size="11" fill="#999">三角形法则</text>
+            </svg>
+          </div>
+          <div style="text-align:center; background:#f8f9fb; border-radius:8px; padding:8px;">
+            <svg width="160" height="110" viewBox="0 0 160 110">
+              <line x1="15" y1="85" x2="65" y2="25" stroke="#2ed573" stroke-width="3"/>
+              <text x="20" y="60" font-size="12" fill="#2ed573" font-weight="600">$\vec{a}$</text>
+              <line x1="15" y1="85" x2="110" y2="80" stroke="#3742fa" stroke-width="3"/>
+              <text x="48" y="92" font-size="12" fill="#3742fa" font-weight="600">$\vec{b}$</text>
+              <line x1="65" y1="25" x2="155" y2="20" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="110" y1="80" x2="155" y2="20" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="15" y1="85" x2="155" y2="20" stroke="#ff4757" stroke-width="3" stroke-dasharray="6,3"/>
+              <text x="85" y="45" font-size="12" fill="#ff4757" font-weight="600">$\vec{a}+\vec{b}$</text>
+              <text x="80" y="15" text-anchor="middle" font-size="11" fill="#999">平行四边形法则</text>
+            </svg>
+          </div>
+          <div style="text-align:center; background:#fff0f0; border-radius:8px; padding:8px;">
+            <svg width="160" height="110" viewBox="0 0 160 110">
+              <line x1="15" y1="85" x2="65" y2="25" stroke="#3742fa" stroke-width="3"/>
+              <text x="20" y="60" font-size="12" fill="#3742fa" font-weight="600">$\vec{b}$</text>
+              <line x1="65" y1="25" x2="145" y2="75" stroke="#2ed573" stroke-width="3"/>
+              <text x="100" y="45" font-size="12" fill="#2ed573" font-weight="600">$\vec{a}$</text>
+              <line x1="15" y1="85" x2="145" y2="75" stroke="#ff4757" stroke-width="3" stroke-dasharray="6,3"/>
+              <text x="70" y="105" font-size="12" fill="#ff4757" font-weight="600">$\vec{a}-\vec{b}$</text>
+              <text x="80" y="15" text-anchor="middle" font-size="11" fill="#999">减法 = $\vec{a}+(-\vec{b})$</text>
+            </svg>
+          </div>
+        </div>
+
+        <table>
+          <tr><th>运算</th><th>几何操作</th><th>坐标公式</th><th>口诀</th></tr>
+          <tr>
+            <td><b>加法</b> $\vec{a}+\vec{b}$</td>
+            <td>$\vec{a}$ 尾接 $\vec{b}$ 头，封闭边即和</td>
+            <td>$(x_1+x_2,\ y_1+y_2)$</td>
+            <td>首尾相连，和封闭</td>
+          </tr>
+          <tr>
+            <td><b>减法</b> $\vec{a}-\vec{b}$</td>
+            <td>化为加法：$\vec{a}+(-\vec{b})$</td>
+            <td>$(x_1-x_2,\ y_1-y_2)$</td>
+            <td>减变加，反向再首尾</td>
+          </tr>
+          <tr>
+            <td><b>反向</b> $-\vec{a}$</td>
+            <td>大小不变，方向相反</td>
+            <td>$(-x_1,\ -y_1)$</td>
+            <td>分量变号</td>
+          </tr>
+          <tr>
+            <td><b>模长</b> $|\vec{a}|$</td>
+            <td>向量长度</td>
+            <td>$\sqrt{x_1^2+y_1^2}$</td>
+            <td>勾股定理</td>
+          </tr>
+        </table>
+
+        <div style="background:#fff0f0; border-left:4px solid #ff4757; padding:8px 12px; margin:8px 0; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; font-size:13px; color:#c0392b;">⚠️ 常见错误</div>
+          <ul style="margin:4px 0 0 0; padding-left:18px; font-size:13px;">
+            <li><b>减法看成"直接减"：</b>正确做法是 $\vec{a}-\vec{b} = \vec{a}+(-\vec{b})$，即先把 $\vec{b}$ 反向再加法</li>
+            <li><b>首尾相接时不会直接求和：</b>图中两个向量已经首尾相连，和向量就是<b>从第一根的起点指向最后一根的终点</b></li>
+            <li><b>"船行风与船速符号搞反"：</b>方向相反即 $\vec{v}_{\text{船行风}}=-\vec{v}_{\text{船速}}$，代入公式时别忘了负号</li>
+            <li><b>模长计算错误：</b>$|\vec{v}|=\sqrt{x^2+y^2}$，不是 $x+y$</li>
+          </ul>
+        </div>
+
+        <div class="tip">关联题目：<a href="真题精讲/2025新高考I卷.html#q6" target="_blank">2025新高考I卷 第6题（风速合成）</a></div>
+      </div>
     </div>
   </div>
 
   <!-- ===== 模块4: 函数 ===== -->
   <div class="module" id="module-4">
-    <div class="module-header" onclick="toggleModule(this)">
-      四、📦 函数 <span style="font-weight:400;font-size:13px;color:#666;">（灵魂模块）</span>
+    <div class="module-header" onclick="toggleModule(this)" style="border-left:4px solid #ffa502;">
+      四、📦 函数 <span style="font-weight:400;font-size:13px;color:#666;">（灵魂模块）</span> <span class="badge">⚠️ 1 个薄弱点</span>
       <span class="arrow open">▾</span>
     </div>
     <div class="module-body">
@@ -129,6 +235,97 @@
       <div class="topic" id="topic-func-4"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">单调性（定义法证明步骤）</span></div>
       <div class="topic" id="topic-func-5"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">奇偶性：$f(-x)=f(x)$ / $f(-x)=-f(x)$，定义域对称性</span></div>
       <div class="topic" id="topic-func-6"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">周期性 $f(x+T)=f(x)$</span></div>
+      <div class="topic" id="topic-func-period">
+        <span class="checkbox" onclick="toggleCheck(this)"></span>
+        <span class="text"><b>周期性 + 奇偶性 联合运用</b></span>
+        <button class="weak-badge" onclick="showWeakness('weak-periodicity', this)">⚠️ 需要强化</button>
+      </div>
+
+      <!-- 薄弱点详情：周期性+奇偶性 -->
+      <div class="weakness-detail" id="weak-periodicity">
+        <button class="close-btn" onclick="closeWeakness('weak-periodicity')">✕</button>
+
+        <h3>🔴 周期性 + 奇偶性 — 联合解题模板</h3>
+        <p style="margin-bottom:8px;">来源：<b>2025新高考I卷 第5题</b>（周期 $T=2$ 的偶函数）</p>
+
+        <div class="info-box">
+          <b>📌 核心原则：</b><br>
+          ① <b>先奇偶，再周期</b> — 永远先处理 $f(-x)$，再处理 $f(x+T)$。顺序反了容易多跳一次。<br>
+          ② <b>周期方向</b> — 自变量偏小就<b>加</b>周期，偏大就<b>减</b>周期，直到落入已知区间。
+        </div>
+
+        <!-- 数轴示例图 -->
+        <div style="display:flex; justify-content:center; margin:8px 0;">
+          <svg width="460" height="130" viewBox="0 0 460 130" style="border:1px solid #eef1f5; border-radius:8px; background:#fafbff;">
+            <line x1="30" y1="65" x2="440" y2="65" stroke="#333" stroke-width="1.5"/>
+            <polygon points="438,61 448,65 438,69" fill="#333"/>
+            <line x1="90" y1="60" x2="90" y2="70" stroke="#333" stroke-width="1"/><text x="90" y="85" font-size="11" fill="#888" text-anchor="middle">-2</text>
+            <line x1="150" y1="60" x2="150" y2="70" stroke="#333" stroke-width="1"/><text x="150" y="85" font-size="11" fill="#888" text-anchor="middle">-1</text>
+            <line x1="210" y1="60" x2="210" y2="70" stroke="#333" stroke-width="1"/><text x="210" y="85" font-size="11" fill="#888" text-anchor="middle">0</text>
+            <line x1="270" y1="60" x2="270" y2="70" stroke="#333" stroke-width="1"/><text x="270" y="85" font-size="11" fill="#888" text-anchor="middle">1</text>
+            <line x1="330" y1="60" x2="330" y2="70" stroke="#333" stroke-width="1"/><text x="330" y="85" font-size="11" fill="#888" text-anchor="middle">2</text>
+            <line x1="390" y1="60" x2="390" y2="70" stroke="#333" stroke-width="1"/><text x="390" y="85" font-size="11" fill="#888" text-anchor="middle">3</text>
+            <rect x="330" y="30" width="60" height="25" fill="#e8f8e8" rx="4" opacity="0.6"/>
+            <text x="360" y="25" font-size="11" fill="#2d7d46" text-anchor="middle" font-weight="700">已知区间</text>
+            <circle cx="195" cy="65" r="5" fill="#ff4757"/>
+            <text x="175" y="45" font-size="12" fill="#ff4757" font-weight="700">$-\frac34$</text>
+            <path d="M 195 60 Q 230 15 280 60" fill="none" stroke="#ffa502" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="230" y="13" font-size="11" fill="#ffa502" font-weight="600">①偶函数</text>
+            <circle cx="280" cy="65" r="5" fill="#ffa502"/>
+            <text x="275" y="45" font-size="12" fill="#ffa502" font-weight="700">$\frac34$</text>
+            <path d="M 280 60 Q 330 15 375 60" fill="none" stroke="#3742fa" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="325" y="13" font-size="11" fill="#3742fa" font-weight="600">②$+T=+2$</text>
+            <circle cx="375" cy="65" r="5" fill="#3742fa"/>
+            <text x="370" y="45" font-size="12" fill="#3742fa" font-weight="700">$\frac{11}{4}$</text>
+          </svg>
+        </div>
+
+        <!-- 解题模板表 -->
+        <table>
+          <tr><th style="width:28%;">步骤</th><th>操作</th><th>本题示例</th></tr>
+          <tr>
+            <td><b>1 · 奇偶性处理</b></td>
+            <td>负自变量↔正自变量<br>偶: $f(-x)=f(x)$ | 奇: $f(-x)=-f(x)$</td>
+            <td>$f(-\frac34)=f(\frac34)$</td>
+          </tr>
+          <tr>
+            <td><b>2 · 周期性跳跃</b></td>
+            <td>反复加/减 $T$ 直到 $x$ 在已知区间内</td>
+            <td>$\frac34+2=\frac{11}{4}\in[2,3]$ ✅</td>
+          </tr>
+          <tr>
+            <td><b>3 · 代入求值</b></td>
+            <td>用已知区间表达式计算</td>
+            <td>$f(\frac{11}{4})=5-2\times\frac{11}{4}=-\frac12$</td>
+          </tr>
+        </table>
+
+        <!-- 奇偶+周期联合速查 -->
+        <table>
+          <tr><th colspan="4">🌟 奇偶性 + 周期性 联合速查</th></tr>
+          <tr><th>性质</th><th>公式</th><th>图像特征</th><th>作用</th></tr>
+          <tr><td><b>偶函数</b></td><td>$f(-x)=f(x)$</td><td>关于 $y$ 轴对称</td><td>负转正</td></tr>
+          <tr><td><b>奇函数</b></td><td>$f(-x)=-f(x)$</td><td>关于原点对称</td><td>负转正再取反</td></tr>
+          <tr><td><b>周期 $T$</b></td><td>$f(x+T)=f(x)$</td><td>每隔 $T$ 重复</td><td>任意 $x$ → 已知区间</td></tr>
+          <tr style="background:#f0f4ff;">
+            <td><b>偶+周期</b></td>
+            <td colspan="3">$f(-a)=f(a)=f(a+T)=f(a+2T)=\cdots$ 直到落入已知区间</td>
+          </tr>
+        </table>
+
+        <div style="background:#fff0f0; border-left:4px solid #ff4757; padding:8px 12px; margin:8px 0; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; font-size:13px; color:#c0392b;">⚠️ 高频失分点</div>
+          <ul style="margin:4px 0 0 0; padding-left:18px; font-size:13px;">
+            <li><b>先奇偶再周期</b> — 顺序不能颠倒！先处理 $f(-x)$ 再处理 $f(x+T)$</li>
+            <li><b>周期方向</b> — 自变量太小就加周期，太大就减周期，直到 $x\in$ 已知区间</li>
+            <li><b>循环落点检查</b> — 跳完后必须检查新自变量是否已在已知区间内，否则继续跳</li>
+            <li><b>半周期 ≠ 半公式</b> — $f(x+\frac{T}{2})$ 不能简化为 $f(x)$，周期只保证 $f(x+T)=f(x)$</li>
+            <li><b>奇偶性定义域</b> — 使用奇偶性前确认定义域关于原点对称</li>
+          </ul>
+        </div>
+
+        <div class="tip">关联题目：<a href="真题精讲/2025新高考I卷.html#q5" target="_blank">2025新高考I卷 第5题（周期 $T=2$ 的偶函数）</a></div>
+      </div>
       <div class="topic" id="topic-func-7"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">对称性</span></div>
 
       <div class="sub-header">4.3 基本初等函数</div>
@@ -176,8 +373,8 @@
 
   <!-- ===== 模块6: 三角函数 ===== -->
   <div class="module" id="module-6">
-    <div class="module-header" onclick="toggleModule(this)">
-      六、📦 三角函数
+    <div class="module-header" onclick="toggleModule(this)" style="border-left:4px solid #ffa502;">
+      六、📦 三角函数 <span class="badge">⚠️ 1 个薄弱点</span>
       <span class="arrow open">▾</span>
     </div>
     <div class="module-body">
@@ -196,6 +393,114 @@
       <div class="sub-header">6.3 图像与性质</div>
       <div class="topic" id="topic-trig-8"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">$y = A\sin(\omega x + \varphi)$ 的图像变换（平移/伸缩）</span></div>
       <div class="topic" id="topic-trig-9"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text">周期 $T = \frac{2\pi}{|\omega|}$，振幅 $A$，相位 $\varphi$</span></div>
+      <div class="topic" id="topic-trig-sym">
+        <span class="checkbox" onclick="toggleCheck(this)"></span>
+        <span class="text"><b>三角函数对称性（易混淆）</b></span>
+        <button class="weak-badge" onclick="showWeakness('weak-trig-symmetry', this)">⚠️ 需要强化</button>
+      </div>
+
+      <!-- 薄弱点详情：三角函数对称性 -->
+      <div class="weakness-detail" id="weak-trig-symmetry">
+        <button class="close-btn" onclick="closeWeakness('weak-trig-symmetry')">✕</button>
+
+        <h3>🔴 三角函数对称性 — $\sin x$ / $\cos x$ / $\tan x$ 对比</h3>
+        <p style="margin-bottom:8px;">来源：<b>2025新高考I卷 第4题</b>（正切函数对称中心）</p>
+
+        <div class="info-box">
+          <b>📌 记忆口诀：</b><br>
+          "$\sin$ 中 $\cos$ 轴，$\cos$ 中 $\sin$ 轴；$\tan$ 每隔 $\frac\pi2$ 就对称。"<br>
+          即 $\sin x$ 的对称中心 = $\cos x$ 的零点，$\cos x$ 的对称中心 = $\sin x$ 的零点；
+          $\tan x$ 的对称中心间隔 $\frac\pi2$，不是 $\pi$！
+        </div>
+
+        <!-- 正切函数图像 -->
+        <div style="display:flex; justify-content:center; margin:8px 0;">
+          <svg width="420" height="175" viewBox="-220 -85 420 175" style="border:1px solid #eef1f5; border-radius:8px; background:#fafbff;">
+            <line x1="-210" y1="0" x2="190" y2="0" stroke="#e8e8e8" stroke-width="0.5"/>
+            <line x1="0" y1="-80" x2="0" y2="80" stroke="#e8e8e8" stroke-width="0.5"/>
+            <line x1="-180" y1="-80" x2="-180" y2="80" stroke="#e8e8e8" stroke-width="0.3"/>
+            <line x1="-90" y1="-80" x2="-90" y2="80" stroke="#e8e8e8" stroke-width="0.3"/>
+            <line x1="90" y1="-80" x2="90" y2="80" stroke="#e8e8e8" stroke-width="0.3"/>
+            <line x1="180" y1="-80" x2="180" y2="80" stroke="#e8e8e8" stroke-width="0.3"/>
+            <line x1="-210" y1="0" x2="200" y2="0" stroke="#333" stroke-width="1.2"/>
+            <line x1="0" y1="-82" x2="0" y2="82" stroke="#333" stroke-width="1.2"/>
+            <text x="198" y="-4" font-size="12" fill="#333" font-weight="600">x</text>
+            <text x="4" y="-82" font-size="12" fill="#333" font-weight="600">y</text>
+            <text x="-180" y="14" font-size="11" fill="#888" text-anchor="middle">$-\frac\pi2$</text>
+            <text x="-90" y="14" font-size="11" fill="#888" text-anchor="middle">$-\frac\pi4$</text>
+            <text x="90" y="14" font-size="11" fill="#888" text-anchor="middle">$\frac\pi4$</text>
+            <text x="180" y="14" font-size="11" fill="#888" text-anchor="middle">$\frac\pi2$</text>
+            <path d="M -160 -75 Q -140 -35 -110 -5 Q -100 5 -90 0" fill="none" stroke="#3742fa" stroke-width="2"/>
+            <path d="M -90 0 Q -80 -5 -70 -15 Q -40 -70 -10 -75" fill="none" stroke="#3742fa" stroke-width="2" stroke-dasharray="6,4"/>
+            <path d="M -10 75 Q 10 70 40 15 Q 70 -35 90 0" fill="none" stroke="#3742fa" stroke-width="2"/>
+            <path d="M 90 0 Q 100 5 110 15 Q 140 70 170 75" fill="none" stroke="#3742fa" stroke-width="2" stroke-dasharray="6,4"/>
+            <line x1="-180" y1="-82" x2="-180" y2="82" stroke="#ccc" stroke-width="1.2" stroke-dasharray="4,4"/>
+            <line x1="0" y1="-82" x2="0" y2="82" stroke="#ccc" stroke-width="1.2" stroke-dasharray="4,4"/>
+            <line x1="180" y1="-82" x2="180" y2="82" stroke="#ccc" stroke-width="1.2" stroke-dasharray="4,4"/>
+            <circle cx="-180" cy="0" r="4" fill="#ff4757"/>
+            <circle cx="-90" cy="0" r="4" fill="#ff4757"/>
+            <circle cx="0" cy="0" r="4" fill="#ff4757"/>
+            <circle cx="90" cy="0" r="4" fill="#ff4757"/>
+            <circle cx="180" cy="0" r="4" fill="#ff4757"/>
+            <text x="0" y="-6" font-size="10" fill="#ff4757" text-anchor="middle">$(0,0)$</text>
+            <text x="90" y="-6" font-size="10" fill="#ff4757" text-anchor="middle">$(\frac\pi4,0)$</text>
+          </svg>
+        </div>
+
+        <!-- 三函数对称性对比 -->
+        <table>
+          <tr><th>函数</th><th>周期</th><th>对称轴</th><th style="background:#fff0f0;">对称中心</th><th>渐近线</th></tr>
+          <tr>
+            <td>$y=\sin x$</td>
+            <td>$2\pi$</td>
+            <td>$x = \frac\pi2 + k\pi$</td>
+            <td style="background:#fff0f0;">$(k\pi,\ 0)$</td>
+            <td>无</td>
+          </tr>
+          <tr>
+            <td>$y=\cos x$</td>
+            <td>$2\pi$</td>
+            <td>$x = k\pi$</td>
+            <td>$(\frac\pi2 + k\pi,\ 0)$</td>
+            <td>无</td>
+          </tr>
+          <tr style="background:#f0f8ff;">
+            <td><b>$y=\tan x$</b></td>
+            <td><b>$\pi$</b></td>
+            <td>无</td>
+            <td style="background:#fff0f0;"><b>$(\frac{k\pi}{2},\ 0)$</b></td>
+            <td>$x = \frac\pi2 + k\pi$</td>
+          </tr>
+        </table>
+
+        <!-- 常考对称中心值 -->
+        <table>
+          <tr><th colspan="4">🌟 常考对称中心值（$y=\tan x$）</th></tr>
+          <tr><td>$k=-2$</td><td>$(-\pi,0)$</td><td>$k=0$</td><td>$(0,0)$</td></tr>
+          <tr><td>$k=-1$</td><td>$(-\frac\pi2,0)$</td><td>$k=1$</td><td>$(\frac\pi2,0)$</td></tr>
+          <tr><td colspan="4" style="text-align:center; font-size:13px; color:#c0392b;">$\tan$ 对称中心间隔是 $\frac\pi2$（不是 $\pi$）！$(\pi,0)$ 对应 $k=2$ 也对称</td></tr>
+        </table>
+
+        <p><b>💡 记忆技巧：</b></p>
+        <ul>
+          <li><b>$\sin x$ 的对称中心 = $\cos x$ 的零点</b>：$\cos x=0 \Rightarrow x=\frac\pi2+k\pi$，所以 $\sin x$ 的对称轴在 $x=\frac\pi2+k\pi$</li>
+          <li><b>$\cos x$ 的对称轴 = $\sin x$ 的零点</b>：$\sin x=0 \Rightarrow x=k\pi$，所以 $\cos x$ 的对称轴在 $x=k\pi$</li>
+          <li><b>$\tan x$ 的对称中心</b>：$(\frac{k\pi}{2},0)$，因为公式是 $\omega x+\varphi=\frac{k\pi}{2}$，系数 $A$ 不影响</li>
+          <li><b>$\tan x$ 平移</b>：左加右减，对称中心随之移动</li>
+        </ul>
+
+        <div style="background:#fff0f0; border-left:4px solid #ff4757; padding:8px 12px; margin:8px 0; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; font-size:13px; color:#c0392b;">⚠️ 最易混淆点</div>
+          <ul style="margin:4px 0 0 0; padding-left:18px; font-size:13px;">
+            <li><b>$\tan$ 的对称中心是 $(\frac{k\pi}{2},0)$，不是 $(k\pi,0)$</b>（后者是 $\sin$ 的对称中心） — 差一倍间隔！</li>
+            <li>$\tan$ <b>没有</b>对称轴，但有渐近线。渐近线 $x=\frac\pi2+k\pi$ 的位置不要当成对称中心。</li>
+            <li>$y=A\tan(\omega x+\varphi)$ 的对称中心由 $\omega x+\varphi=\frac{k\pi}{2}$ 决定，$A$ 不影响位置。</li>
+            <li>平移方向：$x-\frac\pi3$ 是向右平移 $\frac\pi3$，对称中心也随之右移。</li>
+          </ul>
+        </div>
+
+        <div class="tip">关联题目：<a href="真题精讲/2025新高考I卷.html#q4" target="_blank">2025新高考I卷 第4题（正切对称中心）</a></div>
+      </div>
 
       <div class="sub-header">6.4 解三角形</div>
       <div class="topic" id="topic-trig-10"><span class="checkbox" onclick="toggleCheck(this)"></span><span class="text"><b>正弦定理</b> $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$</span></div>
